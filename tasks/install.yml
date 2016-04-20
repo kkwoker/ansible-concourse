@@ -14,6 +14,8 @@
     checksum: sha1:11ee11f880fdf7791adead50699e83c61cdd9bc3
     dest: /opt/concourse/
     mode: 775
+    owner: concourse
+    group: concourse
   tags:
     - concourse
     - install
@@ -24,18 +26,24 @@
   args:
     chdir: /opt/concourse/
     creates: host_key
+    owner: concourse
+    group: concourse
 
 - name: Generate Worker key
   shell: ssh-keygen -t rsa -f worker_key -N ''
   args:
     chdir: /opt/concourse/
     creates: worker_key
+    owner: concourse
+    group: concourse
 
 - name: Generate Session Signing Key
   shell: ssh-keygen -t rsa -f session_signing_key -N ''
   args:
     chdir: /opt/concourse/
     creates: session_signing_key
+    owner: concourse
+    group: concourse
 
 # Copy worker key as authorized_worker_keys
 - name: Create authorized worker keys
@@ -43,3 +51,5 @@
   args:
     chdir: /opt/concourse/
     creates: authorized_worker_keys
+    owner: concourse
+    group: concourse
