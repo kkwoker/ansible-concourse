@@ -2,7 +2,7 @@
 - name: Download Concourse Binary
   get_url:
     url: "https://github.com/concourse/concourse/releases/download/v1.1.0/concourse_linux_amd64"
-    checksum: 11ee11f880fdf7791adead50699e83c61cdd9bc3
+    checksum: sha1:11ee11f880fdf7791adead50699e83c61cdd9bc3
     dest: /opt/concourse/
     mode: 775
   tags:
