@@ -1,4 +1,13 @@
 ---
+
+- name: Create concourse directory
+  file:
+    state: directory
+    path: /opt/concourse/
+  tags:
+    - directory
+    - setup
+
 - name: Download Concourse Binary
   get_url:
     url: "https://github.com/concourse/concourse/releases/download/v1.1.0/concourse_linux_amd64"
