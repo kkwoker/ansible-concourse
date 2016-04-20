@@ -1,0 +1,23 @@
+---
+- name: Download Concourse Binary
+  get_url:
+    url: "https://github.com/concourse/concourse/releases/download/v1.1.0/concourse_linux_amd64"
+    checksum: 11ee11f880fdf7791adead50699e83c61cdd9bc3
+    dest: /opt/concourse/
+    mode: 775
+  tags:
+    - concourse
+    - install
+
+# Generate required keys
+- name: Generate Host key
+  shell: ssh-keygen -t rsa -f host_key -N ''
+- name: Generate Worker key
+  shell: ssh-keygen -t rsa -f worker_key -N ''
+- name: Generate Session Signing Key
+  shell: ssh-keygen -t rsa -f session_signing_key -N ''
+
+# Copy worker key as authorized_worker_keys
+- name: Create authorized worker keys
+  shell: cp worker_key.pub authorized_worker_keys
+

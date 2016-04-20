@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  author: "Kinnan Kwok"
+  description: "A Continuous Integration platform."
+  license: "MIT"
+  platforms:
+    - name: "Ubuntu"
+      versions:
+        - "trusty"
+        - "xenial"
+  categories:
+    - "web"
+dependencies:
+  - role: telusdigital.upstart
+    upstart_name: concourse
+    upstart_exec_path: /usr/sbin/service
+    upstart_exec_flags:
+      - concourse
+      - start

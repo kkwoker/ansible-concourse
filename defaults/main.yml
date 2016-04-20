@@ -1,0 +1,7 @@
+---
+concourse_user: concourse
+
+# concourse_runtime_root: "{{ runtime_root | default('/var/run') }}/concourse"
+# concourse_pidfile_path: "{{ concourse_runtime_root }}/concourse.pid"
+
+
