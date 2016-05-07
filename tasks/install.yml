@@ -49,3 +49,11 @@
   args:
     chdir: /opt/concourse/
     creates: authorized_worker_keys
+
+- name: Write concourse run template
+  template:
+    src: concourse.sh
+    dest: /opt/concourse.sh
+    owner: concourse
+    group: concourse
+    mode: 0755
