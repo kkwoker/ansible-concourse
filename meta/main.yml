@@ -10,10 +10,3 @@ galaxy_info:
         - "xenial"
   categories:
     - "web"
-dependencies:
-  - role: telusdigital.upstart
-    upstart_name: concourse
-    upstart_exec_path: /usr/sbin/service
-    upstart_exec_flags:
-      - concourse
-      - start

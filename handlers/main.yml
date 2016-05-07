@@ -1,7 +1,1 @@
 ---
-- name: Reload Service | concourse
-  service:
-    state: reloaded
-    name: concourse
-  tags:
-    - disruptive
