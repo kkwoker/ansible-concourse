@@ -5,3 +5,8 @@ concourse_user: concourse
 # concourse_pidfile_path: "{{ concourse_runtime_root }}/concourse.pid"
 
 
+concourse_github_auth_client_secret: "{{ mandatory }}"
+concourse_github_auth_client_id: "{{ mandatory }}"
+concourse_github_auth_organization: telusdigital
+concourse_postgres_data_source: "postgres://postgres:password@localhost/"
+concourse_external-url: "http://54.73.16.23:8080/"
