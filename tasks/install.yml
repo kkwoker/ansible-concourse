@@ -30,21 +30,18 @@
   args:
     chdir: /opt/concourse/
     creates: host_key
-    owner: concourse
 
 - name: Generate Worker key
   shell: ssh-keygen -t rsa -f worker_key -N ''
   args:
     chdir: /opt/concourse/
     creates: worker_key
-    owner: concourse
 
 - name: Generate Session Signing Key
   shell: ssh-keygen -t rsa -f session_signing_key -N ''
   args:
     chdir: /opt/concourse/
     creates: session_signing_key
-    owner: concourse
 
 # Copy worker key as authorized_worker_keys
 - name: Create authorized worker keys
@@ -52,4 +49,3 @@
   args:
     chdir: /opt/concourse/
     creates: authorized_worker_keys
-    owner: concourse
