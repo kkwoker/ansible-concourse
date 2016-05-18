@@ -51,3 +51,14 @@
     owner: ubuntu
     group: ubuntu
     mode: 0755
+
+- name: Change execution permission on concourse binary
+  file:
+    path: /opt/concourse/concourse_linux_amd64
+    mode: 0755
+- name: Change owner of concourse
+  file:
+    path: /opt/concourse
+    owner: ubuntu
+    group: ubuntu
+    recurse: true
